@@ -1,4 +1,3 @@
 node_modules
-
-# Diretorio de build
 dist
+coverage

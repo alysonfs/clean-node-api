@@ -2,7 +2,7 @@ import { SignUpController } from './signup'
 import { MissingParamError, InvalidParamError, ServerError } from '../../errors'
 import {
   EmailValidator, AddAccount,
-  AddAccountModel, AccountModel
+  AccountModel
 } from './signup-protocols'
 
 interface SutTypes {
@@ -22,7 +22,7 @@ const makeEmailValidate = (): EmailValidator => {
 
 const makeAddAccount = (): AddAccount => {
   class AddAccountStup implements AddAccount {
-    async add (account: AddAccountModel): Promise<AccountModel> {
+    async add (account: AccountModel): Promise<AccountModel> {
       const fakeAccount = {
         id: 'valid_id',
         name: 'valid_name',
